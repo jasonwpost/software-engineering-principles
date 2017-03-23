@@ -10,7 +10,7 @@ This is a collection of design patterns in java taken from headfirst java (to be
 * Program to an interface, not an implementation: Best to keep things flexible. This principle ensures behaviours of classes can be changed at run time.
 * Favour composition over inheritance: Has-a relationships can be better than Is-a relationships.
 * Strive for loosely coupled designs between objects that interact: they allow for more flexibility and minimise interdependence.
-* Classes should be open for extension but closed for modification. This is usually done through abstract classes with specifics being defined in implementations. A key principle in the decorator class
+* Classes should be open for extension but closed for modification. This is usually done through abstract classes with specifics being defined in implementations. A key principle in the decorator class.
 
 ## Warnings about applying design patterns
 
