@@ -8,4 +8,4 @@ Even though you may use decorator through subclassing, objects don't gain behavi
 
 
 
-However, decorators can result in many small objects that can be difficult to maintain, and having multiple levels of composition can be confusing to look at. 
+However, decorators can result in many small objects that can be difficult to maintain, and having multiple levels of composition can be confusing to look at. Another thing is that it can be difficult to use decorators if you rely on the base concrete type a lot (example would be a discount in an espresso object - the discount is only applied to that class and none of the decorators).
