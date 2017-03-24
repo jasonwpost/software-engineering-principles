@@ -65,3 +65,51 @@ public Programmer(int embeddedSystemsExperienceLevel, int handlebarsExperience){
   this(0, 0, embeddedSystemsExperienceLevel, handlebarsExperience);
 }
 ```
+
+## Extracting methods
+
+Used to turn code fragments into a method with a descriptive name. Code should be readable as comments. If you see code and think "what exactly is going on here?" - it probably means you should be extracting it to methods.
+
+### Example 1
+
+Can be as simple as moving formatting to a method:
+
+```java
+public void doSomething(){
+
+  int[] list = getNewList();
+  System.out.println("------------------");
+  System.out.println("time-dist-altitude");
+  System.out.println("------------------");
+  presentNewList(list);
+
+  list = getNewList();
+  System.out.println("------------------");
+  System.out.println("time-dist-altitude");
+  System.out.println("------------------");
+  presentNewList(list);
+}
+```
+
+can be turned into:
+
+```java
+public void doSomething(){
+
+  int[] list = getNewList();
+  printHeading();
+  presentNewList(list);
+
+  list = getNewList();
+  printHeading()
+  presentNewList(list);
+}
+
+public void printHeading(){
+  System.out.println("------------------");
+  System.out.println("time-dist-altitude");
+  System.out.println("------------------");
+}
+```
+
+Extracting to methods should always be logical however. For example, it doesn't make sense to break out a conditional operator statement into a function if it is just as clear whats happening.
