@@ -177,3 +177,55 @@ int totalWeight = weight1+weight2; // better name: combinedWeight
 totalWeight = totalWeight - lostWeight1; // weightAfterWeightLoss
 totalWeight = totalWeight / numOfPeople; // weightPerPerson
 ```
+
+### Extracting to a class
+
+If the class you are working in has some related variables that don't fit neatly into the class, you may want to extract this information into another class.
+
+#### Example 1: locations
+
+In the following class, the address information could be extracted to another class:
+
+```java
+public class Student {
+  private String firstName;
+  private String lastName;
+  private String street;
+  private String city;
+  private String country;
+  private String postalCode;
+  private String birthday;
+  //...
+}
+```
+
+The address information could be extracted to an Address class and declared in the Student class:
+
+```java
+public class Address {
+  private String street;
+  private String city;
+  private String country;
+  private String postalCode;
+
+  public Address(String street, String city, String country, String postalCode){
+    this.street = street;
+    this.city = city;
+    this.country = country;
+    this.postalCode = postalCode;
+  }
+}
+
+public class Student {
+  private String firstName;
+  private String lastName;
+  private Address address;
+  private String birthday;
+}
+```
+
+And then declared in a constructor or setter method as something like:
+
+```java
+Student james = new Student("James", "Doe", new Address("123 fake street, Springfield, USA, 1234"), "05/06/07");
+```
