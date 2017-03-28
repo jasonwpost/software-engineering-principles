@@ -11,6 +11,7 @@ This is a collection of design patterns in java taken from headfirst java (to be
 * Favour composition over inheritance: Has-a relationships can be better than Is-a relationships.
 * Strive for loosely coupled designs between objects that interact: they allow for more flexibility and minimise interdependence.
 * Classes should be open for extension but closed for modification. This is usually done through abstract classes with specifics being defined in implementations. A key principle in the decorator class.
+* Depend upon abstractions. Do not depend upon concrete classes. Also called dependency inversion. Guidelines: No variable should hold a reference to a concrete class. No class should derive from a concrete class. No method should override an implemented method of any of its base classes. A key principle in the factory pattern.
 
 ## Warnings about applying design patterns
 
